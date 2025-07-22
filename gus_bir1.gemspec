@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'simplecov'
 
-  spec.add_dependency 'savon', '~> 2.14'
+  spec.add_dependency 'savon', '~> 2.15'
   spec.add_dependency 'savon-multipart'
   spec.add_dependency 'ostruct', '~> 0.6'
 end
