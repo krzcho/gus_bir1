@@ -76,47 +76,47 @@ To start querying the GUS database, You can use three methods `GusBir1.find_by`,
 with `regon`
 ```ruby
 response = GusBir1.find_by(regon: '00033150100000')
- => [#<struct SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
 response.class
  => Array
 response.first
- => #<struct SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">
+ => #<struct GusBir1::Response::SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">
 ```
 
 with `nip`
 ```ruby
 response = GusBir1.find_by(nip: '8992689516')
- => [#<struct SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
  ```
 
 with `krs`
 ```ruby
 response = GusBir1.find_by(krs: '0000352235')
- => [#<struct SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
 ```
 
 with `regons14` (up to 20 regons)
 ```ruby
 response = GusBir1.find_by(regons14: '00033150100000,02121583300000')
- => [#<struct SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">, #<struct SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">, #<struct GusBir1::Response::SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
  ```
 
  with `regons9` (up to 20 regons)
  ```ruby
  response = GusBir1.find_by(regons9: '000331501,021215833')
- => [#<struct SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">, #<struct SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">, #<struct GusBir1::Response::SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
   ```
 
 with `nips` (up to 20 nips)
 ```ruby
  response = GusBir1.find_by(nips: '8992689516,5261040828')
- => [#<struct SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">, #<struct SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="GŁÓWNY URZĄD STATYSTYCZNY", regon="00033150100000", province="MAZOWIECKIE", district="m. st. Warszawa", community="Śródmieście", city="Warszawa", zip_code="00-925", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">, #<struct GusBir1::Response::SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
 ```
 
 with `krss` (up to 20 krss)
 ```ruby
 response = GusBir1.find_by(krss: '0000352235')
- => [#<struct SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
+ => [#<struct GusBir1::Response::SearchResult name="\"PSP POLSKA\" SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ", regon="02121583300000", province="DOLNOŚLĄSKIE", district="m. Wrocław", community="Wrocław-Stare Miasto", city="Wrocław", zip_code="53-505", street="ul. Test-Krucza", type="P", silos_id="6", type_desc="Typ jednostki – jednostka prawna", silos_desc="Miejsce prowadzenia działalności jednostki prawnej", report="PublDaneRaportPrawna">]
 ```
 
 #### get_full_data
@@ -146,7 +146,7 @@ response.first.class
 ## Example
 
 ```ruby
-company = struct SearchResult.new
+company = struct GusBir1::Response::SearchResult.new
 
 gus_response = GusBir1.find_and_get_full_data(nip: 5261040828)
 if gus_response.first
@@ -166,7 +166,7 @@ if gus_response.first
 end
 
 company
- => #<struct SearchResult name="GUS", address="ul. Test-Krucza 208", zip="00-925", city="Warszawa", country="POLSKA", regon="00033150100000", nip="5261040828">
+ => #<struct GusBir1::Response::SearchResult name="GUS", address="ul. Test-Krucza 208", zip="00-925", city="Warszawa", country="POLSKA", regon="00033150100000", nip="5261040828">
 ```
 
 
