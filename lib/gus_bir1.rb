@@ -11,7 +11,6 @@ require 'gus_bir1/report/types'
 require 'gus_bir1/report/type_mapper'
 require 'gus_bir1/errors'
 require 'forwardable'
-require 'ostruct'
 
 module GusBir1
   class << self
