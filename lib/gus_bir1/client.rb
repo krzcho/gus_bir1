@@ -158,7 +158,8 @@ module GusBir1
         multipart: true,
         log_level: @log_level,
         log: @logging,
-        proxy: ENV['GUS_BIR_PROXY_URL']
+        proxy: ENV['GUS_BIR_PROXY_URL'],
+        transport: :faraday
       }
       if defined?(@sid) && @sid.nil? == false
         params.merge!({headers: { sid: @sid } })
