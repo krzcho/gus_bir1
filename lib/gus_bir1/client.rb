@@ -64,7 +64,7 @@ module GusBir1
 
     def get_summary_data(date = Date.yesterday.strftime("%Y-%m-%d"), report = 'BIR11SkreslonePodmiotyPrawneOrazDzialalnosciOsFizycznych')
       set_session_id
-      Response::FullData.new dane_pobierz_raport_zbiorczy(
+      Response::Search.new dane_pobierz_raport_zbiorczy(
         Constants::PARAM_REPORT_DATE => date,
         Constants::PARAM_REPORT_NAME => report
       )
