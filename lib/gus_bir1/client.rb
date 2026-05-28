@@ -159,7 +159,7 @@ module GusBir1
         log_level: @log_level,
         log: @logging,
         proxy: ENV['GUS_BIR_PROXY_URL'],
-        transport: :faraday
+        ssl_ca_cert_file: ENV['SSL_CERT_FILE']
       }
       if defined?(@sid) && @sid.nil? == false
         params.merge!({headers: { sid: @sid } })
