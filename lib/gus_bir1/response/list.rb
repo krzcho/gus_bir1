@@ -12,7 +12,7 @@ module GusBir1
 
       def array
         n = Nokogiri.XML body
-        n.xpath('//dane/regon/text()')
+        n.xpath('//dane/regon/text()').map { |o| o.to_s }
       end
 
       private
