@@ -18,7 +18,7 @@ module GusBir1
 
     def_delegators :client, :production, :client_key, :service_status,
                    :session_status, :status_date_state, :find_by, :find_and_get_full_data,
-                   :get_full_data
+                   :get_full_data, :get_summary_data
     def_delegators :client, :production=, :client_key=, :log_level=, :logging=
 
     def service_available?
