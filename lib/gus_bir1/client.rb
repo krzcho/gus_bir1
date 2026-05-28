@@ -62,6 +62,14 @@ module GusBir1
       r.map { |h| get_full_data_from_response(h) }
     end
 
+    def get_summary_data(date = Date.yesterday.strftime("%Y-%m-%d"), report = 'BIR11SkreslonePodmiotyPrawneOrazDzialalnosciOsFizycznych')
+      set_session_id
+      Response::FullData.new dane_pobierz_raport_zbiorczy(
+        Constants::PARAM_REPORT_DATE => date,
+        Constants::PARAM_REPORT_NAME => report
+      )
+    end
+
     private
 
     def search_by(search_by, search)
@@ -99,7 +107,8 @@ module GusBir1
           :dane_szukaj_podmioty,
           :dane_pobierz_pelny_raport,
           :dane_komunikat,
-          :zaloguj
+          :zaloguj,
+          :dane_pobierz_raport_zbiorczy
         savon_client_publ.call(method, message: message)
       else
         savon_client.call(method, message: message)
